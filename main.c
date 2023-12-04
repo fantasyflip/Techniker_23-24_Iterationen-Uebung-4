@@ -110,7 +110,7 @@ void task5(){
 
     //Überprüfen ob die Breite ungerade ist.
     if(width % 2 == 0){
-        printf("Die Breite muss ungerade sein. Gewählte Breite: %i\n", width);
+        printf("Die Breite muss ungerade sein. Gewaehlte Breite: %i\n", width);
     } else {
 
         //Schleife für jede Zeile
@@ -225,6 +225,48 @@ void task9(){
     printf("\n");
 }
 
+void task10(){
+    printf("Aufgabe 10: Raute aus Sternen\n\n");
+
+    int width = 9;
+
+    if(width % 2 == 0){
+        printf("Die Breite muss ungerade sein. Gewaehlte Breite: %i\n", width);
+    } else {
+
+        //Schleife für die Zeilen
+        for(int i = 0; i < width; i ++){
+            //Leerzeichen links und rechts berechnen
+            int spaces = (width/2)-i;
+
+            //Wenn Leerzeichen negativ sind den Betrag davon benutzen
+            if(spaces < 0){
+                spaces = spaces * -1;
+            }
+
+
+            //Leerzeichen ausgaben
+            for(int j = 0; j < spaces; j++){
+                printf(" ");
+            }
+            //Sterne ausgeben
+            for(int j = 0; j < width-(spaces*2); j++){
+                printf("*");
+            }
+            //Leerzeichen ausgeben
+            for(int j = 0; j < spaces; j++){
+                printf(" ");
+            }
+
+            //Absatz nach jeder Zeile
+            printf("\n");
+
+        }
+    }
+
+    printf("\n");
+}
+
 int main()
 {
     task1();
@@ -236,6 +278,7 @@ int main()
     task7();
     task8();
     task9();
+    task10();
 
     return 0;
 }
