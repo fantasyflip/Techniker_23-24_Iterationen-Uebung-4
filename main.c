@@ -141,6 +141,25 @@ void task5(){
     printf("\n");
 }
 
+void task6(){
+    printf("Aufgabe 6: Dreieck - Rechter Winkel unten links\n\n");
+
+    //Variable definieren
+    int height = 9;
+
+    //Schleife für die Zeilen
+    for(int i = 0; i < height; i++){
+        //Schleife für die Sterne
+        for(int j = 0; j <= i; j++){
+            printf("*");
+        }
+        //Absatz nach jeder Zeile mit Sternen
+        printf("\n");
+    }
+
+    printf("\n");
+}
+
 int main()
 {
     task1();
@@ -148,6 +167,7 @@ int main()
     task3();
     task4();
     task5();
+    task6();
 
     return 0;
 }
