@@ -101,12 +101,53 @@ void task4(){
     printf("\n");
 }
 
+void task5(){
+    printf("Aufgabe 5: Raute\n\n");
+
+    //Variablen definieren
+    const char fillIcon = 'O', spaceIcon = '+';
+    const int width = 21;
+
+    //Überprüfen ob die Breite ungerade ist.
+    if(width % 2 == 0){
+        printf("Die Breite muss ungerade sein. Gewählte Breite: %i\n", width);
+    } else {
+
+        //Schleife für jede Zeile
+        for(int i = 0; i < width; i++){
+            //Schleife für jedes Zeichen
+            for(int j = 0; j < width; j++){
+                //Horizontale Mitte
+                if(i == (width/2)){
+                    printf("%c",fillIcon);
+                }
+                //Vertikale Mitte
+                else if(j == (width/2)){
+                    printf("%c",fillIcon);
+                }
+                //Diagonalen
+                else if(j == (width/2) + i || j == (width/2) - i || j == i - (width/2) || (i > width/2 && j == (width - i-1) + (width/2))){
+                    printf("%c",fillIcon);
+                }
+                //Restliche Zeichen
+                else {
+                    printf("%c",spaceIcon);
+                }
+            }
+            printf("\n");
+        }
+    }
+
+    printf("\n");
+}
+
 int main()
 {
     task1();
     task2();
     task3();
     task4();
+    task5();
 
     return 0;
 }
