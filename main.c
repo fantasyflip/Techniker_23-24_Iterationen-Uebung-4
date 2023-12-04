@@ -44,10 +44,30 @@ void task2(){
     printf("\n");
 }
 
+void task3(){
+    printf("Aufgabe 3: Dreieck\n\n");
+
+    //Variable definieren
+    int height = 9;
+
+    //Schleife für die Zeilen
+    for(int i = 0; i < height; i++){
+        //Schleife für die Sterne
+        for(int j = 0; j <= i; j++){
+            printf("*");
+        }
+        //Absatz nach jeder Zeile mit Sternen
+        printf("\n");
+    }
+
+    printf("\n");
+}
+
 int main()
 {
     task1();
     task2();
+    task3();
 
     return 0;
 }
