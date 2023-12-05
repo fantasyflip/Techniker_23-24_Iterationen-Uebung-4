@@ -67,24 +67,25 @@ void task4(){
     printf("Aufgabe 4: Quadrat mit Diagonalen\n\n");
 
     const char fillIcon = 'x', spaceIcon = '-';
-    const int width = 15;
+
+    #define  WIDTH 15
 
     //Schleife für Zeilen
-    for(int i = 0; i < width; i++){
+    for(int i = 0; i < WIDTH; i++){
         //Schleife für Zeichen in der Zeile
-        for(int j = 0; j < width; j++){
+        for(int j = 0; j < WIDTH; j++){
             //Wenn es die erste oder die letzte Zeile ist
-            if(i == 0 || i == width - 1){
+            if(i == 0 || i == WIDTH - 1){
                 //fillIcon ausgeben
                 printf("%c",fillIcon);
             }
             //Wenn es das erste oder letzte Zeichen in einer Zeile ist
-            else if (j == 0 || j == width - 1){
+            else if (j == 0 || j == WIDTH - 1){
                 //fillIcon ausgeben
                 printf("%c", fillIcon);
             }
             //Diagonalen zeichnen
-            else if(i == j || i == width - j - 1){
+            else if(i == j || i == WIDTH - j - 1){
                 //fillIcon ausgeben
                 printf("%c", fillIcon);
             }
