@@ -283,17 +283,9 @@ void task11(){
                 //Schleife für ein Muster -> n * X oder n * O
                 for(int j = 0; j < count; j++){
                     if(i % 2 == 0){
-                        if(invert == 1){
-                            printf("X");
-                        } else {
-                            printf("O");
-                        }
+                        printf("%c", invert == 1 ? 'X' : 'O');
                     } else {
-                        if(invert == 1){
-                            printf("O");
-                        } else {
-                            printf("X");
-                        }
+                        printf("%c", invert == 1 ? 'O' : 'X');
                     }
                     printf(" ");
                 }
