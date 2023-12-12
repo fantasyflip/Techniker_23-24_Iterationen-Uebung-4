@@ -268,6 +268,49 @@ void task10(){
     printf("\n");
 }
 
+void task11(){
+    printf("Aufgabe 11: Zusatzaufgabe\n\n");
+
+    int count = 3;
+    int invert = 0;
+
+    //Schleife für Reihe der Blöcke
+    for(int l = 0; l < count; l++){
+        //Schleife für Zeilen
+        for(int k = 0; k < count; k++){
+            //Schleife für die Wiederholung der Count Muster -> count = 3 -> Ein Muster OOO oder XXX
+            for(int i = 0; i < count; i++){
+                //Schleife für ein Muster -> n * X oder n * O
+                for(int j = 0; j < count; j++){
+                    if(i % 2 == 0){
+                        if(invert == 1){
+                            printf("X");
+                        } else {
+                            printf("O");
+                        }
+                    } else {
+                        if(invert == 1){
+                            printf("O");
+                        } else {
+                            printf("X");
+                        }
+                    }
+                    printf(" ");
+                }
+            }
+            printf("\n");
+        }
+
+        //Invertieren der Muster für die Folge Reihe
+        if(invert == 0){
+            invert = 1;
+        } else {
+            invert = 0;
+        }
+    }
+
+}
+
 int main()
 {
     task1();
@@ -280,6 +323,7 @@ int main()
     task8();
     task9();
     task10();
+    task11();
 
     return 0;
 }
