@@ -300,7 +300,77 @@ void task11(){
             invert = 0;
         }
     }
+    printf("\n\n");
+}
 
+void task12(){
+    printf("Aufgabe 12: Pot. Schulaufgaben Aufgabe - Haus vom Nikolaus\n\n");
+
+
+    //Höhe (und Breite) des Hauses OHNE das Dach
+    int height = 12;
+
+    //Dach ausgeben, ohne horizontalen Strich
+    //Schleife für die Höhe -> Höhe ist die Höhe des Hauses / 2 und anschließend aufgerundet. Bei 7 / 2 = 3,5 wird bei int einfach 3 daraus. Deshalb muss man hier +1 machen um die Mitte zu finden
+    for(int i = 0; i < height/2+1; i++){
+        //Abstand zur Seite berechnen - Ist links und rechts immer gleich weit entfernt
+        int offset = (height/2)+1-i;
+        //Schleife für die Zeile
+        for(int j = 0; j < height; j++){
+            //Jedes mal wenn j an der stelle eines offsets ist wird ein Stern gemacht. Sonst Leerzeichen
+            if(j == offset-1 || j == height-offset){
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        //Nach jeder vollen Zeile: Zeilenumbruch
+        printf("\n");
+    }
+
+    //Haus zeichnen
+    //Schleife für die Zeilen
+    for(int i = 0; i < height; i++){
+        //Schleife für die Spalten
+        for(int j = 0; j < height; j++){
+            //Wenn es die erste oder die letzte Zeile ist permanent mit * ausfüllen (Boden und Dach)
+            if(i==0 || i == height-1){
+                printf("*");
+            }
+            //Wenn es die erste oder die letzte Spalte ist permanent mit * ausfüllen (Seitenwände links und rechts)
+            else if(j == 0 || j == height-1){
+                printf("*");
+            }
+            //Diagonalen:
+            //links oben -> rechts unten: Wenn j und i gleich sind wird ein * gesetzt
+            //rechts oben -> links unten: Wenn j die breite - 1 (fangen bei 0 an zu zählen) - i (um sich immer weiter nach links anzunähern) ist wird ein * gesetzt
+            else if(j == i || j == height-1-i){
+                printf("*");
+            }
+            //Sonst wird ein Leerzeichen gesetzt
+            else {
+                printf(" ");
+            }
+        }
+        //Nach jeder vollen Zeile: Zeilenumbruch
+        printf("\n");
+    }
+
+    //Die IF-Abfragen aus dem Zeichnen des Hauses können theoretisch auch in einer einzigen IF-Abfrage erledigt werden (auskommentieren zum testen):
+
+//    for(int i = 0; i < height; i++){
+//        for(int j = 0; j < height; j++){
+//            if(i==0 || i == height-1 || j == 0 || j == height-1 || j == i || j == height-1-i){
+//            // ^-----1.Abfrage-------^^------2.Abfrage----------^^-------3. Abfrage--------^
+//                printf("*");
+//            } else {
+//                printf(" ");
+//            }
+//        }
+//        printf("\n");
+//    }
+
+    printf("\n\n");
 }
 
 int main()
@@ -316,6 +386,7 @@ int main()
     task9();
     task10();
     task11();
+    task12();
 
     return 0;
 }
