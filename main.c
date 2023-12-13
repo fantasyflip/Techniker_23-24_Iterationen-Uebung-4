@@ -308,7 +308,7 @@ void task12(){
 
 
     //Höhe (und Breite) des Hauses OHNE das Dach
-    int height = 12;
+    int height = 13;
 
     //Dach ausgeben, ohne horizontalen Strich
     //Schleife für die Höhe -> Höhe ist die Höhe des Hauses / 2 und anschließend aufgerundet. Bei 7 / 2 = 3,5 wird bei int einfach 3 daraus. Deshalb muss man hier +1 machen um die Mitte zu finden
